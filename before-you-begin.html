@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>My CASA</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/furnace.min.css">
+  <link rel="stylesheet" href="css/lead.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="live-demo au-body au-grid js">
+  <header class="au-header logo au-body--dark" role="banner">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-xs-7">
+          <a class="au-header__brand" href="dashboard.html">
+            <img class="au-header__brand-image" alt="my CASA" src="img/CASALOGO-white-i.svg">
+          </a>
+        </div>
+        <div class="col-md-3 col-xs-5">
+
+			  <div  id="menu-col">
+
+				  <div class="au-btn au-btn--dark" id="signout">
+
+					<div>Menu</div>
+
+					<div id="menu">
+						<div class="menu"><a href="profile-dashboard.html">Switch profile</a></div>
+						<div class="menu"><a href="#">Edit profile</a></div>
+						<div class="menu"><a href="mycasa-update.html">Sign out</a></div>
+					</div>
+
+				  </div>
+
+			</div>
+
+
+
+		</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="banner">
+    <div class=container>
+      <div class="row">
+        <div class="col-md-12">
+          This service is currently in beta, we encourage you to <a href="feedback.html">provide feedback</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=container>
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="au-breadcrumbs" aria-label="breadcrumb">
+          <ul class="au-link-list au-link-list--inline">
+            <li><a href="dashboard-wendy.html">Home</a></li>
+            <li>Flight authorisation</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12"><br>
+
+          <h2 class="au-display-xl m-t-2">Flight authorisation</h2>
+          <a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
+
+          <h3>What you'll need</h3>
+          <div class="">
+            <!--<p>[...about Individual and Organisation reoc...]</p>-->
+            <p><strong>Supporting documentations required:</strong></p>
+			  <ul class="m-t-1">
+            <li>Updated RPAS operations procedures (library) if applicable</li>
+			<li>Procedures associated with operation</li>
+			<li>Job Safety Assessment (site hazzards)</li>
+			<li>Risk Assessment</li>
+			<li>Letter of agreement obtained - if applicable</li>
+			<li>Point to point operational locations</li>
+            <li>Map/s of the operational area</li>
+			<li>Flight Profile</li>  
+			  </ul>
+			  
+            <p><strong>Information required:</strong></p>
+                <ul class="m-t-1">
+					<li>Approval and/or permission type</li>
+					<li>Details of your RPA Crew onsite during operation</li>
+					<li>The RPA (drone) models which will be used during operations</li>
+					<li>Details of the operation</li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+<br />
+          <a href="upload-app.html" class="au-btn" id="next">Next</a>
+          <div class="save-exit">
+            <a href="#" class="au-btn au-btn--secondary">
+              Cancel
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-wrapper">
+      <iframe src="footer.html" frameborder="0" border="0" scrolling="no"></iframe>
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/furnace.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script>
+    //$("#error").hide();
+
+    $("#org").change(function() {
+      var org = getElementById("org");
+      if (this.checked) {
+        $(this).removeClass('hidden');
+      } else {
+        $(this).addClass('hidden');
+      }
+    });
+
+		$('input[name=radio-ex]').change(function() {
+      if ($('#yes-legal').is(':checked')) {
+        $('a#next').attr("href", "profile-dashboard.html").text("Switch Profile");
+      } else {
+        $('#no-myself').addClass('hidden');
+        $('a#next').attr("href", "drone-details.html").text("Next");
+      }
+			$('#next').removeClass('hidden');
+    });
+
+  </script>
+</body>
+
+</html>
